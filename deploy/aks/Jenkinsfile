@@ -1,17 +1,17 @@
 node('master') {
 
-    def servicePrincipalId = '<your-service-principal>'
-    def resourceGroup = '<your-resource-group-name>'
-    def aks = '<your-kubernetes-cluster-name>'
+    def servicePrincipalId = 'azure_service_principal'
+    def resourceGroup = 'AKS-Blue-Green-RG'
+    def aks = 'aks-blue-green-cluster'
 
-    def cosmosResourceGroup = '<your-cosmodb-resource-group>'
-    def cosmosDbName = '<your-cosmodb-name>'
-    def dbName = '<your-dbname>'
+    def cosmosResourceGroup = 'AKS-Blue-Green-RG'
+    def cosmosDbName = 'bulegreenaccount'
+    def dbName = 'Company'
 
-    def dockerRegistry = '<your-acr-name>.azurecr.io'
+    def dockerRegistry = 'bluegreencontainerregistry125.azurecr.io'
     def imageName = "todo-app:${env.BUILD_NUMBER}"
     env.IMAGE_TAG = "${dockerRegistry}/${imageName}"
-    def dockerCredentialId = '<your-acr-credential-id>'
+    def dockerCredentialId = 'ACR_ID'
 
     def currentEnvironment = 'blue'
     def newEnvironment = { ->
