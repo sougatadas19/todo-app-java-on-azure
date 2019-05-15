@@ -1,6 +1,6 @@
 node('master') {
 
-    def servicePrincipalId = 'azure_service_principal'
+    def servicePrincipalId = 'jenkins'
     def resourceGroup = 'AKS-Blue-Green-RG'
     def aks = 'aks-blue-green-cluster'
 
